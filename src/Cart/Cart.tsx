@@ -1,18 +1,31 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useContext, useState } from "react";
 import { CartContext } from "./UserCart";
 
 const Cart: FC = () => {
 	const [cart] = useContext(CartContext);
+	const [toggleCart, setToggleCart] = useState(false);
+
 	console.log(cart);
 
 	return (
 		<div className="cart">
 			<h1>Koszyk</h1>
-			{Object.keys(cart).length ? (
-				"hiho"
-			) : (
-				<h2 className="cart__empty-msg">Twój koszyk jest pusty!</h2>
-			)}
+
+			<button className="cart__toggle-cart-btn" onClick={() => setToggleCart(!toggleCart)}>
+				{toggleCart ? "Ukryj koszyk" : "Rozwiń koszyk"}
+			</button>
+
+			{toggleCart ? (
+				<>
+					{Object.keys(cart).length ? (
+						"hiho"
+					) : (
+						<h2 className="cart__empty-msg">
+							Twój koszyk jest pusty!
+						</h2>
+					)}
+				</>
+			) : null}
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import React, { FC, useContext, useState, useEffect } from "react";
 import { CartContext } from "./UserCart";
-import CartItems from './CartItems';
+import CartItems from "./CartItems";
 
 const Cart: FC = () => {
 	const [cart] = useContext(CartContext);
@@ -32,7 +32,7 @@ const Cart: FC = () => {
 			{toggleCart ? (
 				<>
 					{Object.keys(cart).length ? (
-							  <CartItems/>	
+						<CartItems />
 					) : (
 						<h2 className="cart__empty-msg">
 							Twój koszyk jest pusty!

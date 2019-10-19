@@ -7,14 +7,14 @@ type SortSelectProps = {
 };
 
 function sortProductsByName(productA: TProduct, productB: TProduct): number {
-	if (productA.name < productB.name) return 1;
-	if (productA.name > productB.name) return -1;
+	if (productA.name > productB.name) return 1;
+	if (productA.name < productB.name) return -1;
 	return 0;
 }
 
 function sortProductsByPrice(productA: TProduct, productB: TProduct): number {
-	if (productA.price < productB.price) return 1;
-	if (productA.price > productB.price) return -1;
+	if (productA.price > productB.price) return 1;
+	if (productA.price < productB.price) return -1;
 	return 0;
 }
 
@@ -23,11 +23,11 @@ const SortSelect: Factory<SortSelectProps> = ({ products, setProducts }) => {
 		const val: string = e.target.value;
 		switch (val) {
 			case "price":
-				console.log(products.sort(sortProductsByPrice));
+				setProducts([...products.sort(sortProductsByPrice)]);
 				break;
 			case "name":
 				//THIS NEXT
-				console.log(products.sort(sortProductsByName));
+				setProducts([...products.sort(sortProductsByName)]);
 				break;
 		}
 	}

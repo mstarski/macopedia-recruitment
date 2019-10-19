@@ -7,7 +7,6 @@ type ListProps = {
 };
 
 const ProductList: Factory<ListProps> = ({ products }) => {
-	console.log(products);
 	return (
 		<ul className="product-list">
 			{products.map(product => (

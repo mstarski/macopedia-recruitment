@@ -1,15 +1,15 @@
 export default [
 	{
 		id: 0,
-		name: "Fotel",
-		price: 299,
-		img: "fotel.png",
-	},
-	{
-		id: 1,
 		name: "Krzes\u0142o Bia\u0142e",
 		price: 199,
 		img: "krzeslo-biale.png",
+	},
+	{
+		id: 1,
+		name: "Fotel",
+		price: 299,
+		img: "fotel.png",
 	},
 	{
 		id: 2,
@@ -25,7 +25,7 @@ export default [
 	},
 	{
 		id: 4,
-		name: "\u0141\u00f3\u017cko",
+		name: "Materac",
 		price: 651,
 		img: "lozko.png",
 	},

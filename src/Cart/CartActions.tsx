@@ -26,7 +26,7 @@ function removeItem(state: Cart, id: number) {
 	const updatedState = state;
 	delete updatedState[id];
 
-	return updatedState;
+	return { ...updatedState };
 }
 
 export function incrementItem(state: Cart, id: number) {

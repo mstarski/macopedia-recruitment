@@ -52,4 +52,14 @@
 		text-align: center;
 		padding: 0.5rem;
 	}
+
+	&__price-info {
+		display: flex;
+		align-items: center;
+		margin-left: 2rem;
+
+		strong {
+			margin-left: 0.5rem;
+		}
+	}
 }

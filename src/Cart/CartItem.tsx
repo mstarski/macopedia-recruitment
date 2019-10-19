@@ -1,5 +1,6 @@
-import React, { Factory } from "react";
+import React, { Factory, useContext } from "react";
 import { Product } from "../../typdefs/Product";
+import { CartContext, actions } from "../Cart/UserCart";
 
 type CartItemProps = {
 	itemData: Product;
@@ -7,6 +8,7 @@ type CartItemProps = {
 };
 
 const CartItem: Factory<CartItemProps> = ({ itemData, quantity }) => {
+	const [_, dispatch] = useContext(CartContext);
 	return (
 		<div className="cart-items__item">
 			<div
@@ -20,9 +22,30 @@ const CartItem: Factory<CartItemProps> = ({ itemData, quantity }) => {
 					<p className="cart-items__item-quantity">{quantity}</p>
 				</div>
 				<div className="cart-items__control-buttons">
-					<button>+</button>
-					<button>-</button>
+					<button
+						onClick={() =>
+							dispatch({
+								type: actions.INCREMENT_ITEM,
+								payload: { id: itemData.id },
+							})
+						}
+					>
+						+
+					</button>
+					<button
+						onClick={() =>
+							dispatch({
+								type: actions.DECREMENT_ITEM,
+								payload: { id: itemData.id },
+							})
+						}
+					>
+						-
+					</button>
 				</div>
+				<span className="cart-items__price-info">
+					Cena <strong>{` ${itemData.price * quantity}zł`}</strong>
+				</span>
 			</div>
 		</div>
 	);

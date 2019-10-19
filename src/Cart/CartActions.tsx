@@ -1,4 +1,4 @@
-import { Cart } from '../../typdefs/Cart';
+import { Cart } from "../../typdefs/Cart";
 
 export function addItem(state: Cart, id: number) {
 	if (state[id]) {

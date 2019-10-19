@@ -1,7 +1,6 @@
 import React, { FC, useReducer, createContext } from "react";
 import { addItem, incrementItem, decrementItem } from "./CartActions";
-import { Actions, Action, Cart } from '../../typdefs/Cart';
-
+import { Actions, Action, Cart } from "../../typdefs/Cart";
 
 export const CartContext = createContext(null);
 
@@ -14,14 +13,11 @@ export const actions: Actions = {
 function reducer(state: Cart, action: Action) {
 	switch (action.type) {
 		case actions.ADD_ITEM:
-			addItem(state, action.payload.id);
-			break;
+			return addItem(state, action.payload.id);
 		case actions.INCREMENT_ITEM:
-			incrementItem(state, action.payload.id);
-			break;
+			return incrementItem(state, action.payload.id);
 		case actions.DECREMENT_ITEM:
-			decrementItem(state, action.payload.id);
-			break;
+			return decrementItem(state, action.payload.id);
 		default:
 			return state;
 	}

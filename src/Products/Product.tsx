@@ -3,8 +3,7 @@ import { Product as ProductProps } from "../../typdefs/Product";
 import { CartContext, actions } from "../Cart/UserCart";
 
 const Product: Factory<ProductProps> = ({ name, price, img, id }) => {
-	const [cart, dispatch] = useContext(CartContext);
-	console.log(cart);
+	const [_, dispatch] = useContext(CartContext);
 	return (
 		<li className="product-list__item">
 			<div

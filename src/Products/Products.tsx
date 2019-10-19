@@ -1,17 +1,20 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import ProductList from "./ProductList";
-import SortSelect from './SortSelect';
+import SortSelect from "./SortSelect";
+import products from "../../data/products";
 
 const Products: FC = () => {
+	const [items, setItems] = useState(products);
+
 	return (
 		<>
 			<div className="products-topside">
 				<h1>Produkty</h1>
-				<SortSelect/>
+				<SortSelect products={items} setProducts={setItems} />
 			</div>
 
 			<div>
-					  <ProductList/>
+				<ProductList products={items} />
 			</div>
 		</>
 	);

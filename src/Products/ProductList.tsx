@@ -1,13 +1,17 @@
-import React, { FC } from "react";
-import products from "../../data/products";
+import React, { Factory } from "react";
 import Product from "./Product";
+import { Product as TProduct } from "../../typdefs/Product";
 
-const ProductList: FC = () => {
+type ListProps = {
+	products: Array<TProduct>;
+};
+
+const ProductList: Factory<ListProps> = ({ products }) => {
 	console.log(products);
 	return (
 		<ul className="product-list">
 			{products.map(product => (
-				<Product key={product.name} {...product} />
+				<Product key={product.id} {...product} />
 			))}
 		</ul>
 	);

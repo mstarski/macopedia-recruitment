@@ -1,10 +1,5 @@
 import React, { Factory } from "react";
-
-type ProductProps = {
-	name: string;
-	price: number;
-	img: string;
-};
+import { Product as ProductProps } from '../../typdefs/Product';
 
 const Product: Factory<ProductProps> = ({ name, price, img }) => {
 	return (

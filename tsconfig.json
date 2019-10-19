@@ -2,14 +2,15 @@
     "compilerOptions": {
         "module": "es6",
         "noImplicitAny": true,
-		  "noImplicitThis": true,
+        "noImplicitThis": true,
         "sourceMap": true,
-		  "allowSyntheticDefaultImports": true,
-		  "alwaysStrict": true,
-		  "jsx": "react"
+        "allowSyntheticDefaultImports": true,
+        "alwaysStrict": true,
+        "jsx": "react"
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "data/**/*"
     ],
     "exclude": [
         "node_modules"

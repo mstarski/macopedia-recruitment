@@ -1,7 +1,20 @@
 import React, { FC } from "react";
+import ProductList from "./ProductList";
+import SortSelect from './SortSelect';
 
 const Products: FC = () => {
-	return <h1>Products</h1>;
+	return (
+		<>
+			<div className="products-topside">
+				<h1>Produkty</h1>
+				<SortSelect/>
+			</div>
+
+			<div>
+					  <ProductList/>
+			</div>
+		</>
+	);
 };
 
 export default Products;

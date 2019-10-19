@@ -1,0 +1,13 @@
+@import "./utilities";
+
+@import "./Products/Products";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.app {
+	padding: 0 10rem;
+}

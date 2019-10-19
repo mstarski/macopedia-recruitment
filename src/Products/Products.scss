@@ -1,0 +1,35 @@
+$block-width: 250;
+
+.products-topside {
+	margin-left: 6rem;
+	display: flex;
+
+	&__sort-select {
+		margin-left: 2rem;
+	}
+}
+
+.product-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, px-to-rem($block-width));
+	justify-content: center;
+	list-style: none;
+	grid-gap: 6rem;
+	margin-top: 4rem;
+
+	&__thumbnail {
+		width: px-to-rem($block-width);
+		height: px-to-rem($block-width);
+		background-size: cover;
+		object-fit: cover;
+	}
+
+	&__item-description {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2rem;
+		font-size: 1.2rem;
+	}
+}

@@ -5,13 +5,14 @@ const Cart: FC = () => {
 	const [cart] = useContext(CartContext);
 	const [toggleCart, setToggleCart] = useState(false);
 
-	console.log(cart);
-
 	return (
 		<div className="cart">
 			<h1>Koszyk</h1>
 
-			<button className="cart__toggle-cart-btn" onClick={() => setToggleCart(!toggleCart)}>
+			<button
+				className="cart__toggle-cart-btn"
+				onClick={() => setToggleCart(!toggleCart)}
+			>
 				{toggleCart ? "Ukryj koszyk" : "Rozwiń koszyk"}
 			</button>
 

@@ -1,7 +1,10 @@
-import React, { Factory } from "react";
-import { Product as ProductProps } from '../../typdefs/Product';
+import React, { Factory, useContext } from "react";
+import { Product as ProductProps } from "../../typdefs/Product";
+import { CartContext, actions } from "../Cart/UserCart";
 
-const Product: Factory<ProductProps> = ({ name, price, img }) => {
+const Product: Factory<ProductProps> = ({ name, price, img, id }) => {
+	const [cart, dispatch] = useContext(CartContext);
+	console.log(cart);
 	return (
 		<li className="product-list__item">
 			<div
@@ -10,9 +13,19 @@ const Product: Factory<ProductProps> = ({ name, price, img }) => {
 			></div>
 			<p className="product-list__item-description">
 				<span>{name}</span>
-				<span>{price}{" zł"}</span>
+				<span>
+					{price}
+					{" zł"}
+				</span>
 			</p>
-			<button className="btn">Dodaj do koszyka</button>
+			<button
+				onClick={() =>
+					dispatch({ type: actions.ADD_ITEM, payload: { id } })
+				}
+				className="btn"
+			>
+				Dodaj do koszyka
+			</button>
 		</li>
 	);
 };

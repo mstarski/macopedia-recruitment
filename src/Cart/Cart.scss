@@ -15,6 +15,10 @@
 	&__item {
 		display: flex;
 		margin-top: 1rem;
+
+		@media (max-width: 500px) {
+			flex-flow: column;
+		}
 	}
 
 	&__item-thumbnail {
@@ -23,16 +27,29 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		margin: 1rem;
+
+		@media (max-width: 500px) {
+			align-self: center;
+		}
 	}
 
 	&__item-controls {
 		display: flex;
 		margin: 0 2rem;
+
+		@media (max-width: 500px) {
+			justify-content: center;
+		}
 	}
 
 	&__item-name {
 		display: flex;
 		align-items: center;
+
+		@media (max-width: 500px) {
+			justify-content: center;
+			margin: 1rem 0;
+		}
 	}
 
 	&__item-details {
@@ -45,7 +62,7 @@
 	&__control-buttons {
 		display: flex;
 		flex-flow: column;
-		justify-content: space-around;
+		justify-content: space-evenly;
 
 		button {
 			width: px-to-rem(30);

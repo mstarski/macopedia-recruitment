@@ -18,13 +18,16 @@ const CartItems: FC = () => {
 	return (
 		<>
 			<ul className="cart-items">
-				{Object.keys(cart).map(itemId => (
-					<CartItem
-						key={itemId}
-						itemData={products[Number.parseInt(itemId)]}
-						quantity={cart[itemId].quantity}
-					/>
-				))}
+				{Object.keys(cart).map(itemId => {
+					const itemData = products.find(p => p.id === +itemId);
+					return (
+						<CartItem
+							key={itemId}
+							itemData={itemData}
+							quantity={cart[itemId].quantity}
+						/>
+					);
+				})}
 			</ul>
 			<div className="cart-items__full-price">
 				<strong>{calculateFullPrice(cart) + "zł"}</strong>

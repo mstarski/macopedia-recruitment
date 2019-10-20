@@ -1,15 +1,22 @@
 import React, { FC, useContext, useState, useEffect } from "react";
-import { CartContext } from "./UserCart";
+import { CartContext, actions } from "./UserCart";
 import CartItems from "./CartItems";
 
 const Cart: FC = () => {
-	const [cart] = useContext(CartContext);
+	const [cart, dispatch] = useContext(CartContext);
 	const [toggleCart, setToggleCart] = useState(false);
 	const [init, setInit] = useState(true);
 
 	useEffect(() => {
-		//Prevent cart from opening when the component
-		//first loads
+		const savedData = localStorage.getItem("userCart");
+		if (savedData && init) {
+			setInit(false);
+			return dispatch({
+				type: actions.REPLACE_CART,
+				payload: { newState: JSON.parse(savedData) },
+			});
+		}
+
 		if (init) {
 			setInit(false);
 			return;

@@ -60,3 +60,6 @@ export function decrementItem(state: Cart, id: number) {
 	};
 }
 
+export function replace(state: Cart, newState: Cart) {
+	return { ...newState };
+}

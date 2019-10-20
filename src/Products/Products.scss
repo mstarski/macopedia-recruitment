@@ -1,8 +1,10 @@
 $block-width: 250;
 
 .products-topside {
-	margin-left: 6rem;
+	max-width: px-to-rem(1000);
 	display: flex;
+	flex-wrap: wrap;
+	margin: 2rem auto;
 
 	&__sort-select {
 		margin-left: 2rem;
@@ -14,7 +16,7 @@ $block-width: 250;
 	grid-template-columns: repeat(auto-fill, px-to-rem($block-width));
 	justify-content: center;
 	list-style: none;
-	grid-gap: 6rem;
+	grid-gap: 3rem;
 	margin-top: 4rem;
 
 	&__thumbnail {

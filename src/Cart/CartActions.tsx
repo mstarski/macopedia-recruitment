@@ -2,11 +2,11 @@ import { Cart } from "../../typdefs/Cart";
 
 export function addItem(state: Cart, id: number) {
 	if (state[id]) {
-		const itemToUpdate = state[id];
-		itemToUpdate.quantity += 1;
 		return {
 			...state,
-			[id]: itemToUpdate,
+			[id]: {
+				quantity: state[id].quantity + 1,
+			},
 		};
 	}
 

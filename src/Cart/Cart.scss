@@ -1,12 +1,13 @@
 .cart {
-	margin: 0.5rem 0 2rem 6rem;
+	max-width: px-to-rem(1000);
+	margin: auto;
 
 	&__empty-msg {
 		margin: 1rem 0;
 	}
 
 	&__toggle-cart-btn {
-		margin-top: 1rem;
+		margin: 1rem 0 0 0;
 	}
 }
 
@@ -45,6 +46,10 @@
 		display: flex;
 		flex-flow: column;
 		justify-content: space-around;
+
+		button {
+			width: px-to-rem(30);
+		}
 	}
 
 	&__item-quantity {

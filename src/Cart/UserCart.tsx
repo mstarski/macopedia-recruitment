@@ -10,16 +10,28 @@ export const actions: Actions = {
 	DECREMENT_ITEM: "DECREMENT_ITEM",
 };
 
+function saveStateToLocalStorage(state: Cart) {
+	const stringifiedData: string = JSON.stringify(state);
+		  localStorage.setItem('userCart', stringifiedData);
+}
+
 function reducer(state: Cart, action: Action) {
+	let newState: Cart = state;
 	switch (action.type) {
 		case actions.ADD_ITEM:
-			return addItem(state, action.payload.id);
+			newState = addItem(state, action.payload.id);
+			saveStateToLocalStorage(newState);
+			return newState;
 		case actions.INCREMENT_ITEM:
-			return incrementItem(state, action.payload.id);
+			newState = incrementItem(state, action.payload.id);
+			saveStateToLocalStorage(newState);
+			return newState;
 		case actions.DECREMENT_ITEM:
-			return decrementItem(state, action.payload.id);
+			newState = decrementItem(state, action.payload.id);
+			saveStateToLocalStorage(newState);
+			return newState;
 		default:
-			return state;
+			return newState;
 	}
 }
 
